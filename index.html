@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rede de Proteção - Informação, apoio e denúncias sobre violência doméstica."
+    />
+    <title>Rede de Proteção | Combate à Violência Doméstica</title>
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/images/logo-rede-protecao.svg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+        <script src="./assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <div id="safety-modal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-icon"><i class="fas fa-shield-alt"></i></div>
+        <h2>Aviso de Segurança</h2>
+        <p>
+          Este site possui um botão de <strong>Saída Rápida</strong> no canto
+          superior da tela.
+        </p>
+        <p>
+          A qualquer momento, clique nele ou pressione a tecla
+          <strong>ESC</strong> no seu teclado para sair imediatamente e ocultar
+          sua visita.
+        </p>
+        <button
+          id="close-modal"
+          class="btn-primary"
+          style="width: 100%; margin-top: 15px; justify-content: center"
+        >
+          Entendi, acessar o site
+        </button>
+      </div>
+    </div>
+
+    <button id="emergency-exit" class="btn-emergency" title="Sair rápido (ESC)">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </button>
+
+    <header class="site-header" id="topo">
+      <div class="container header-content">
+        <a
+          href="#inicio"
+          class="brand"
+          aria-label="Página inicial da Rede de Proteção"
+        >
+          <img
+            src="./assets/images/logo-rede-protecao.svg"
+            alt="Logo da Rede de Proteção"
+            onerror="
+              this.src =
+                'https://cdn-icons-png.flaticon.com/512/3596/3596091.png'
+            "
+          />
+          <div class="brand-text">
+            <strong>Rede de Proteção</strong>
+            <span>Informação, apoio e denúncias</span>
+          </div>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#tipos">Tipos de Violência</a>
+          <a href="#leis">Leis e Direitos</a>
+          <a href="#ajuda">Como Denunciar</a>
+          <a href="#contato" class="btn-primary nav-cta">Precisa de Ajuda?</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero bg-very-light" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>
+              Você não está <span class="highlight-purple">sozinha.</span>
+            </h1>
+
+            <p>
+              A conscientização é o primeiro passo para o combate à violência
+              doméstica. Encontre aqui apoio, conheça seus direitos e saiba como
+              denunciar de forma segura.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#sobre" class="btn-primary">
+                Conheça o Projeto <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <p class="hero-subtle">
+              Conteúdo informativo com foco em orientação e conscientização.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img
+            src="./assets/images/hero-group.png"
+            alt="Grupo de mulheres se apoiando mutuamente"
+            class="imagem-esfumada"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1573165231977-3f0e27806045?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+            "
+          />
+        </div>
+
+        <div class="custom-shape-divider">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".10"
+              fill="#f4edff"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".25"
+              fill="#f4edff"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="#f4edff"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <section class="section about bg-light" id="sobre">
+        <div class="container about-grid">
+          <div class="about-art">
+            <img
+              src="./assets/images/ribbon-house.png"
+              alt="Laço roxo"
+              onerror="
+                this.src =
+                  'https://cdn-icons-png.flaticon.com/512/3234/3234972.png'
+              "
+            />
+          </div>
+
+          <div class="about-content">
+            <h2>Sobre a Violência Doméstica</h2>
+            <p>
+              A violência doméstica é um problema social grave que afeta
+              mulheres de diferentes idades, realidades e contextos. Muitas
+              vezes, acontece dentro de casa e se mantém pelo medo, pelo
+              silêncio e pela dependência emocional ou financeira.
+            </p>
+
+            <div class="highlight-box">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div>
+                <strong>
+                  Combater a violência doméstica é responsabilidade de todos.
+                </strong>
+                <p>
+                  Informação, acolhimento e apoio são fundamentais para romper o
+                  ciclo da violência e fortalecer a rede de proteção.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-shape-divider">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25"
+              fill="#fbf8ff"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5"
+              fill="#fbf8ff"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="#fbf8ff"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <section class="section types-nova" id="tipos">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Reconheça as Formas de Violência</h2>
+            <p>
+              A violência doméstica pode se manifestar de diferentes formas.
+              Identificar os sinais é um passo importante para buscar ajuda.
+            </p>
+          </div>
+
+          <div class="cards-grid-6">
+            <article class="info-card-center">
+              <div class="icon-circle bg-red">
+                <i class="fa-solid fa-hand-fist"></i>
+              </div>
+              <h3 class="text-red">Física</h3>
+              <p>
+                Agressões como empurrões, tapas, socos, chutes, queimaduras ou
+                estrangulamento.
+              </p>
+            </article>
+
+            <article class="info-card-center">
+              <div class="icon-circle bg-blue">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h3 class="text-blue">Psicológica</h3>
+              <p>
+                Ameaças, humilhações, manipulação, chantagem, controle e
+                isolamento social.
+              </p>
+            </article>
+
+            <article class="info-card-center">
+              <div class="icon-circle bg-purple">
+                <i class="fa-solid fa-user-lock"></i>
+              </div>
+              <h3 class="text-purple">Sexual</h3>
+              <p>
+                Constranger, forçar ou impedir escolhas relacionadas à vida
+                sexual e reprodutiva.
+              </p>
+            </article>
+
+            <article class="info-card-center">
+              <div class="icon-circle bg-orange">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+              <h3 class="text-orange">Patrimonial</h3>
+              <p>
+                Destruir objetos, esconder documentos, reter bens ou controlar
+                recursos da vítima.
+              </p>
+            </article>
+
+            <article class="info-card-center">
+              <div class="icon-circle bg-green">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </div>
+              <h3 class="text-green">Econômica</h3>
+              <p>
+                Controlar o dinheiro, impedir de trabalhar ou limitar a
+                autonomia financeira.
+              </p>
+            </article>
+
+            <article class="info-card-center">
+              <div class="icon-circle bg-slate">
+                <i class="fa-solid fa-comment-slash"></i>
+              </div>
+              <h3 class="text-slate">Moral</h3>
+              <p>
+                Ofensas, xingamentos, calúnia, difamação e acusações que ferem a
+                reputação.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="custom-shape-divider">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25"
+              fill="#f4edff"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5"
+              fill="#f4edff"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="#f4edff"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <section class="section laws bg-light" id="leis">
+        <div class="container laws-grid">
+          <div class="laws-image-wrap">
+            <img
+              src="./assets/images/justice-art.png"
+              alt="Leis e direitos de proteção"
+            />
+          </div>
+
+          <div class="laws-content">
+            <h2>Leis e Direitos de Proteção</h2>
+            <p>
+              Mulheres em situação de violência doméstica têm direito à
+              proteção, ao acolhimento e ao acesso à justiça.
+            </p>
+            <p>
+              A <strong>Lei Maria da Penha</strong> estabelece medidas de
+              proteção, formas de denúncia e mecanismos para combater a
+              violência doméstica e familiar contra a mulher.
+            </p>
+            <a
+              href="http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary btn-small"
+            >
+              Ler a Lei
+            </a>
+          </div>
+        </div>
+
+        <div class="custom-shape-divider">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25"
+              fill="#fbf8ff"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5"
+              fill="#fbf8ff"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="#fbf8ff"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <section class="section support bg-very-light" id="ajuda">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Como Denunciar Casos de Violência</h2>
+            <p>
+              Em situações de violência doméstica, a denúncia pode ser feita por
+              canais oficiais de atendimento e emergência. Buscar ajuda é um
+              passo importante para interromper a violência e garantir proteção.
+            </p>
+          </div>
+
+          <div class="support-list support-list-grid">
+            <article>
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h3>Central 180</h3>
+                <p>
+                  Orientação, acolhimento e denúncias de violência contra a
+                  mulher.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <i class="fa-solid fa-shield"></i>
+              <div>
+                <h3>Polícia Militar 190</h3>
+                <p>
+                  Canal de emergência para situações de risco ou agressão em
+                  andamento.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <i class="fa-solid fa-user-secret"></i>
+              <div>
+                <h3>Disque-Denúncia 181</h3>
+                <p>
+                  Permite denúncia anônima, conforme a disponibilidade no
+                  estado.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <i class="fa-solid fa-building-shield"></i>
+              <div>
+                <h3>Delegacia Especializada</h3>
+                <p>
+                  Registro de ocorrência e encaminhamento para proteção da
+                  vítima.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <i class="fa-solid fa-scale-balanced"></i>
+              <div>
+                <h3>Medidas Protetivas</h3>
+                <p>
+                  Podem ser solicitadas para afastar o agressor e ampliar a
+                  segurança.
+                </p>
+              </div>
+            </article>
+
+            <article>
+              <i class="fa-solid fa-hands-holding-child"></i>
+              <div>
+                <h3>Rede de Apoio Local</h3>
+                <p>
+                  CRAS, CREAS, saúde e assistência social podem oferecer
+                  atendimento.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="custom-shape-divider">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <defs>
+              <linearGradient
+                id="wave-gradient-footer"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stop-color="#5d2c91"></stop>
+                <stop offset="100%" stop-color="#2b173f"></stop>
+              </linearGradient>
+            </defs>
+
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25"
+              fill="#5d2c91"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5"
+              fill="#5d2c91"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="url(#wave-gradient-footer)"
+            ></path>
+          </svg>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contato">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img
+              src="./assets/images/logo-rede-protecao.svg"
+              alt="Logo da Rede"
+              onerror="
+                this.src =
+                  'https://cdn-icons-png.flaticon.com/512/3596/3596091.png'
+              "
+            />
+            <div>
+              <strong>Rede de Proteção</strong>
+              <span>Informação, apoio e denúncias</span>
+            </div>
+          </div>
+
+          <p>
+            Projeto dedicado à conscientização e ao combate à violência
+            doméstica, com foco em acolhimento e acesso à informação.
+          </p>
+        </div>
+
+        <div>
+          <h3>Contatos Importantes</h3>
+          <ul>
+            <li>
+  <i class="fa-solid fa-phone"></i>
+  <a href="tel:180">Central da Mulher — 180</a>
+</li>
+
+<li>
+  <i class="fa-solid fa-shield"></i>
+  <a href="tel:190">Emergência policial — 190</a>
+</li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <a
+                href="https://www.cnj.jus.br/wp-content/uploads/2023/09/delegacia-especializada-de-atendimento-a-mulher-2023.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Procure a delegacia mais próxima
+              </a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:ouvidoriadasmulheres@cnmp.mp.br">
+                ouvidoriadasmulheres@cnmp.mp.br
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Projeto de Extensão. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <button
+      id="back-to-top"
+      class="btn-back-to-top"
+      aria-label="Voltar ao topo"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+  </body>
+</html>
